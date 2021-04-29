@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends \"res://KinematicBody2D.gd\"
+
+func _ready() -> void:
+	movimiento_horizontal()
+	movimiento_vertical()
+
+export var vel_inicial: = Vector2(3000.0, 0)
+
+func movimiento_horizontal() -> void:
+	_ace.x = 0.0
+	_vel.x = vel_inicial.x
+	_pos.x += _vel.x * get_physics_process_delta_time()
+
+func movimiento_vertical() -> void:
+	_vel.y += _ace.y * get_physics_process_delta_time()
+	_pos.y += 0.5 * _ace.y * get_physics_process_delta_time() * get_physics_process_delta_time()
+"
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 102.75, 82.75 )
+texture = ExtResource( 1 )
