@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SpinBox.gd" type="Script" id=1]
+[ext_resource path="res://Button.gd" type="Script" id=2]
+
+[node name="SpinBox" type="SpinBox"]
+margin_right = 74.0
+margin_bottom = 24.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 74.0
+margin_right = 148.0
+margin_bottom = 25.0
+text = "Confirmar"
+script = ExtResource( 2 )
